@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.foldpaper.villagerconnectfour.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"MerchantMenuAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

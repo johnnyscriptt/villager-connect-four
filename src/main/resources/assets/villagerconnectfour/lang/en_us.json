@@ -1,0 +1,20 @@
+{
+	"villagerconnectfour.play": "Connect Four",
+	"villagerconnectfour.resign": "Resign",
+	"villagerconnectfour.close": "Close",
+	"villagerconnectfour.busy": "This villager is already playing Connect Four!",
+	"villagerconnectfour.title": "Connect Four vs %s",
+	"villagerconnectfour.status.your_move": "Your move",
+	"villagerconnectfour.status.thinking": "%s is thinking…",
+	"villagerconnectfour.status.column_full": "That column is full",
+	"villagerconnectfour.status.resigned": "You resigned",
+	"villagerconnectfour.status.abandoned": "Game abandoned",
+	"villagerconnectfour.info.discs": "%s / %s discs",
+	"villagerconnectfour.info.you": "You",
+	"villagerconnectfour.info.first": "first",
+	"villagerconnectfour.banner.win": "You win!",
+	"villagerconnectfour.banner.loss": "You lose!",
+	"villagerconnectfour.banner.draw": "Draw",
+	"villagerconnectfour.banner.close_hint": "Click anywhere to close",
+	"villagerconnectfour.banner.solved_hint": "Connect Four is solved — whoever drops first wins. Try first-player=player."
+}

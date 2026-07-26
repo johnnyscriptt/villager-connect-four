@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "villagerconnectfour",
+	"version": "${version}",
+	"name": "Villager Connect Four",
+	"description": "Play Connect Four against villagers! Their skill scales with their trading level, from a Novice who drops discs at random to a Master who has solved the game — and since the villager goes first, that Master cannot be beaten.",
+	"authors": [
+		"foldpaper"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/villagerconnectfour",
+		"sources": "https://github.com/johnnyscriptt/villager-connect-four",
+		"issues": "https://github.com/johnnyscriptt/villager-connect-four/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/villagerconnectfour/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.foldpaper.villagerconnectfour.VillagerConnectFour"
+		],
+		"client": [
+			"com.foldpaper.villagerconnectfour.client.VillagerConnectFourClient"
+		]
+	},
+	"mixins": [
+		"villagerconnectfour.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
