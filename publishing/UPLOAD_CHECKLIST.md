@@ -17,24 +17,19 @@ Media was captured and both listings were published on 2026-07-26.
 - **Fabric API** is set as a *Required Dependency* under **Settings > Default Relations**
   (`/minecraft/mc-mods/villager-connect-four/settings/default-relations`). That page stays
   editable during moderation, unlike the per-file one. Note it is a *default*: it attaches to
-  files uploaded from now on, and the public Dependencies tab - which lists file-level
-  relations - is still empty for the 0.1.0 file. Attach it to that file too once the project
-  is approved.
+  files uploaded from now on. Re-saving an existing file in the author portal attaches it too,
+  which is how the 0.1.0 file got it (2026-10-23).
 
-### Still outstanding on CurseForge
+### CurseForge clean-up, done 2026-10-23
 
-**Seven em dashes are stuck in file changelogs.** `/project/<id>/files/<fileId>/edit` 404s
-while a file is *Under Manual Review* and returns 200 once the project is approved, so these
-cannot be fixed until moderation clears:
+The seven em dashes that were stuck in file changelogs while the projects sat in moderation
+are gone: Connect Four 0.1.0 (8515012, five), Chess 0.1.1 (8514361, one) and Checkers 0.1.0
+(8514247, one). File pages are editable in the author portal at
+`authors.curseforge.com/#/projects/<id>/files/<fileId>`.
 
-| File | Count | Where |
-|---|---|---|
-| Connect Four 0.1.0 (8515012) | 5 | the `0.1.0 - Initial release` heading, and the trade-screen, winning-side, board-size and absolute-scores bullets |
-| Chess (8514361) | 1 | the trade-screen bullet |
-| Checkers (8514247) | 1 | the trade-screen bullet |
-
-Everything else on both stores - names, summaries, descriptions, gallery captions, and every
-Modrinth changelog - is em dash free.
+Every file of all three Villager mods on CurseForge now lists Fabric API as a required
+dependency, and nothing on either store (names, summaries, descriptions, gallery captions,
+file changelogs) contains an em dash.
 - GitHub repo `johnnyscriptt/villager-connect-four` is public, so the store links resolve.
 
 ## 0. Gate: QA + media session

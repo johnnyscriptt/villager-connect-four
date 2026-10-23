@@ -16,7 +16,7 @@ build, the dev client and the capture tooling all run here. PowerShell is the sh
 |---|---|
 | Minecraft | 26.3 |
 | Loader | Fabric Loader 0.19.5+, Fabric API 0.161.0+26.3 |
-| Loom | 1.17-SNAPSHOT |
+| Loom | 1.18-SNAPSHOT |
 | Java | **25** |
 | Tests | JUnit 5 (junit-bom 5.11.4) |
 | Mappings | Mojmap |
