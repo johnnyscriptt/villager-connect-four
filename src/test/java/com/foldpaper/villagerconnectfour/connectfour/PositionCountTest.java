@@ -17,9 +17,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  *
  * <p>Perft proper is vacuous here: there are never more than seven moves and the count from any
  * position is just the number of columns with room, so a perft assertion would restate the code
- * rather than check it. What is worth testing is that the two things the search relies on —
+ * rather than check it. What is worth testing is that the two things the search relies on -
  * {@link Board#key()} being unique per position, and {@link Board#discAt} agreeing with the
- * bitboards — hold across a large slice of the game tree.
+ * bitboards - hold across a large slice of the game tree.
  *
  * <p>So the tree is walked once and every reachable position counted <em>twice</em>: once keyed
  * by {@code key()}, once keyed by a grid written out cell by cell. Two independent encodings
@@ -56,7 +56,7 @@ class PositionCountTest {
 		return new long[][] {byKey, byGrid};
 	}
 
-	/** Every cell written out — an encoding that shares no code with {@link Board#key()}. */
+	/** Every cell written out - an encoding that shares no code with {@link Board#key()}. */
 	private static String grid(Board board) {
 		StringBuilder out = new StringBuilder();
 		for (int col = 0; col < board.geometry().width(); col++) {

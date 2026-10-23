@@ -1,7 +1,7 @@
 package com.foldpaper.villagerconnectfour.connectfour;
 
 /**
- * How a position travels: the columns played, in order, as digits — {@code "4453"}. The empty
+ * How a position travels: the columns played, in order, as digits - {@code "4453"}. The empty
  * string is the start position. Columns are written 1-based because that is what the published
  * literature and the board's own coordinate labels use; the core is 0-based throughout.
  *
@@ -12,8 +12,8 @@ package com.foldpaper.villagerconnectfour.connectfour;
  *   <li><b>It cannot describe an illegal position.</b> A grid encoding can put a disc in mid-air,
  *       give one side four more discs than the other, or show two completed lines at once, and
  *       every one of those has to be checked for. Here the only reachable values are legal
- *       positions, and {@link #parse}'s four rejections — not a digit, column out of range,
- *       column already full, a move after the game ended — are the whole legality specification.</li>
+ *       positions, and {@link #parse}'s four rejections - not a digit, column out of range,
+ *       column already full, a move after the game ended - are the whole legality specification.</li>
  *   <li><b>It is what the published solver test sets are written in</b>, so reference positions
  *       paste straight into a test. That is the same property that made PDN FEN the right
  *       choice for Checkers.</li>
@@ -22,7 +22,7 @@ package com.foldpaper.villagerconnectfour.connectfour;
  * </ol>
  *
  * <p>What it deliberately does not carry is which side the human plays. That is a property of
- * the session rather than of the position, so it rides on the open packet — exactly where
+ * the session rather than of the position, so it rides on the open packet - exactly where
  * Checkers puts its capture rule.
  */
 public final class MoveSequence {

@@ -1,10 +1,10 @@
 package com.foldpaper.villagerconnectfour.connectfour;
 
 /**
- * The shape of a board, and the bit patterns that follow from it. Pure Java — no Minecraft.
+ * The shape of a board, and the bit patterns that follow from it. Pure Java - no Minecraft.
  *
  * <p>A position is two {@code long}s laid out one column per {@code height + 1} bits: column
- * {@code c} owns bits {@code c*h1 .. c*h1 + height-1} — row 0 at the bottom — and the top bit
+ * {@code c} owns bits {@code c*h1 .. c*h1 + height-1} - row 0 at the bottom - and the top bit
  * of each column is a <em>sentinel</em> that is always clear. The standard 7x6 board is
  * 7 columns of 7 bits, 49 in all, comfortably inside a long.
  *
@@ -18,12 +18,12 @@ package com.foldpaper.villagerconnectfour.connectfour;
  * <p>It also makes dropping a disc a single add: adding 1 to the bottom of a column carries up
  * through the discs already there and lands on the lowest empty cell.
  *
- * <p>This is a class rather than a record because almost all of it is derived — the masks are
+ * <p>This is a class rather than a record because almost all of it is derived - the masks are
  * precomputed once per shape and read on every node of the search. The rest of the core follows
  * the Checkers sibling's record-heavy style; this is the one place it does not fit.
  *
- * <p>Sizes other than 7x6 exist for two reasons: the config exposes a few, and — far more
- * importantly — the tests need small boards. A 4x4 or 5x4 game is small enough that a test can
+ * <p>Sizes other than 7x6 exist for two reasons: the config exposes a few, and - far more
+ * importantly - the tests need small boards. A 4x4 or 5x4 game is small enough that a test can
  * brute-force its true value with an independent naive search and check the real solver against
  * it, which is the strongest correctness oracle this project has.
  */
@@ -36,7 +36,7 @@ public final class Geometry {
 
 	private final int width;
 	private final int height;
-	/** Bits per column — the playable rows plus the sentinel. */
+	/** Bits per column - the playable rows plus the sentinel. */
 	private final int h1;
 	private final int size;
 
@@ -161,7 +161,7 @@ public final class Geometry {
 
 	/**
 	 * The four cells of a completed line, as bit indices, or null if there is no line. Returns
-	 * the lowest such line when several exist — it is only used to highlight the win on screen.
+	 * the lowest such line when several exist - it is only used to highlight the win on screen.
 	 */
 	public int[] winningLine(long discs) {
 		for (int stride : strides) {

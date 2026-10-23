@@ -5,6 +5,7 @@ import com.foldpaper.villagerconnectfour.net.ConnectFourDropC2S;
 import com.foldpaper.villagerconnectfour.net.ConnectFourOutcome;
 import com.foldpaper.villagerconnectfour.net.ConnectFourResignC2S;
 import com.foldpaper.villagerconnectfour.net.ConnectFourStateS2C;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Button;
@@ -25,7 +26,7 @@ import java.util.List;
  * it. A full column refuses with a flash and a dull note rather than silently doing nothing.
  *
  * <p>Row 0 is the bottom of the board in the core and is drawn at the bottom here, so unlike the
- * Checkers sibling there is no row flip — only the one row of headroom above the slab, which the
+ * Checkers sibling there is no row flip - only the one row of headroom above the slab, which the
  * ghost and the start of every fall live in.
  */
 public class ConnectFourScreen extends Screen {
@@ -299,7 +300,7 @@ public class ConnectFourScreen extends Screen {
 			onClose();
 			return true;
 		}
-		if (event.button() != 0 || !game.playerToMove) return false;
+		if (event.button() != InputConstants.MOUSE_BUTTON_LEFT || !game.playerToMove) return false;
 
 		int column = hoveredColumn((int) event.x(), (int) event.y());
 		if (column < 0) return false;

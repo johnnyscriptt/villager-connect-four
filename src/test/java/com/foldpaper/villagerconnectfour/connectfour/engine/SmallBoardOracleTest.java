@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  *
  * <p>Nothing about the bitboards, the transposition table or the non-losing-move pruning is
  * obviously right, and a subtly wrong solver still plays plausible moves. So this test writes a
- * second, deliberately naive solver — a plain grid, a plain four-direction scan, no pruning
- * beyond memoisation — and demands the two agree on the exact score of every position it can
+ * second, deliberately naive solver - a plain grid, a plain four-direction scan, no pruning
+ * beyond memoisation - and demands the two agree on the exact score of every position it can
  * reach on a board small enough to settle completely.
  *
  * <p>Two independent implementations agreeing is a genuine oracle, and it depends on no
@@ -121,7 +121,7 @@ class SmallBoardOracleTest {
 	}
 
 	/**
-	 * One table for the whole test. Reusing it is not just an optimisation — a proven score is
+	 * One table for the whole test. Reusing it is not just an optimisation - a proven score is
 	 * true regardless of which search found it, so carrying the table between positions is the
 	 * same thing the Master does between moves in a real game.
 	 */
@@ -183,7 +183,7 @@ class SmallBoardOracleTest {
 
 	/**
 	 * Wider boards are deliberately not brute-forced here. The naive solver memoises on a string
-	 * per position, and at 7x4 that is millions of entries — it would dominate the build for no
+	 * per position, and at 7x4 that is millions of entries - it would dominate the build for no
 	 * extra confidence. The 4x4 and 5x4 corpora already exercise every mechanism in the search.
 	 */
 	@Test

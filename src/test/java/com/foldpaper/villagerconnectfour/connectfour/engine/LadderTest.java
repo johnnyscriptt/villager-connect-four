@@ -74,7 +74,7 @@ class LadderTest {
 	}
 
 	/**
-	 * How often the profile picks the column the position calls for — the winning one if it has
+	 * How often the profile picks the column the position calls for - the winning one if it has
 	 * a win, otherwise the one that answers the opponent's threat.
 	 */
 	private static int sample(Board position, DifficultyProfile profile) {
@@ -97,7 +97,7 @@ class LadderTest {
 	 * The mechanism the Journeyman is built on, checked directly on the core rather than through
 	 * the engine. Testing it through play would be weaker and flakier: once a position is lost
 	 * whatever it does, every move scores a near-identical forced loss, and the rung's blunder
-	 * chance will happily pick the one that loses soonest — correctly, since they all lose.
+	 * chance will happily pick the one that loses soonest - correctly, since they all lose.
 	 */
 	@Test
 	void aNonLosingMoveNeverHandsTheOpponentAnImmediateWin() {

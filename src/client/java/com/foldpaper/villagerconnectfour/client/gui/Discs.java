@@ -4,7 +4,7 @@ import net.minecraft.client.gui.GuiGraphicsExtractor;
 
 /**
  * Draws discs and the holes they drop into from filled rectangles instead of a sprite sheet. A
- * disc is a scanline circle — one {@code fill} per row — which costs nothing at GUI sizes and
+ * disc is a scanline circle - one {@code fill} per row - which costs nothing at GUI sizes and
  * stays crisp at any board scale, so the mod ships no board or piece art at all.
  *
  * <p>Adapted from the Checkers sibling, whose kings needed a crown ring; nothing here is ever
@@ -14,7 +14,7 @@ import net.minecraft.client.gui.GuiGraphicsExtractor;
 final class Discs {
 	static final int YELLOW_FILL = 0xFFF0C64B, YELLOW_RIM = 0xFFA8811A, YELLOW_HI = 0x70FFF6D0;
 	static final int RED_FILL = 0xFFD24B3A, RED_RIM = 0xFF8E2A20, RED_HI = 0x66FFC0B0;
-	/** The empty cell behind a disc — a hole cut in the slab. */
+	/** The empty cell behind a disc - a hole cut in the slab. */
 	static final int HOLE_FILL = 0xFF17203A, HOLE_RIM = 0xFF0E1428;
 
 	private Discs() {}
@@ -43,7 +43,7 @@ final class Discs {
 		circle(gg, cx, cy, Math.max(1, radius - 1), HOLE_FILL);
 	}
 
-	/** Outlines a cell's disc — used to pick out the four that won. */
+	/** Outlines a cell's disc - used to pick out the four that won. */
 	static void outline(GuiGraphicsExtractor gg, int x, int y, int size, int colour) {
 		int radius = Math.max(3, (int) (size * 0.44));
 		ring(gg, x + size / 2, y + size / 2, radius, colour);

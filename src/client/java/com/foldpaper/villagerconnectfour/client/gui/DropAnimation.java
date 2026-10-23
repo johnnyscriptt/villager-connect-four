@@ -38,7 +38,7 @@ final class DropAnimation {
 
 	/**
 	 * Where the disc is, as a row coordinate that need not be a whole number. Accelerates rather
-	 * than moving evenly — a disc that falls at a constant speed does not look like it is falling.
+	 * than moving evenly - a disc that falls at a constant speed does not look like it is falling.
 	 */
 	float rowAt(long nowMs) {
 		long elapsed = nowMs - startMs;

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * How games end. Every move sequence here is written 1-based, as {@link MoveSequence} does, and
- * the assertions check the resulting shape rather than trusting the sequence — so a typo shows
+ * the assertions check the resulting shape rather than trusting the sequence - so a typo shows
  * up as a failure rather than as a test that quietly proves nothing.
  */
 class GameEndTest {

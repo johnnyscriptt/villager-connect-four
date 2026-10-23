@@ -58,7 +58,7 @@ public class VillagerConnectFourClient implements ClientModInitializer {
 	 * How many widgets already sit in the column we want, so the sibling Villager Games mods
 	 * stack instead of landing on the same pixel. Vanilla's merchant widgets all live inside
 	 * the 276-wide panel, left of x, so they never count. Which mod gets which row depends on
-	 * init order and may vary between launches — they never overlap, which is the point.
+	 * init order and may vary between launches - they never overlap, which is the point.
 	 */
 	private static int occupiedRows(Screen screen, int x, int width) {
 		int count = 0;

@@ -7,7 +7,7 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 
 /**
- * Opens the board. State travels as a move sequence — the columns played, as 1-based digits —
+ * Opens the board. State travels as a move sequence - the columns played, as 1-based digits -
  * and {@code villagerEntityId} lets the client draw the actual villager beside it.
  *
  * <p>Unlike the Checkers sibling's open packet, this one carries <b>{@code playerToMove}</b> and

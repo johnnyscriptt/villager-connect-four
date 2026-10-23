@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Engine behaviour on positions with a known right answer.
  *
  * <p>Anything that plays whole games does so on a small board. The villager presets carry real
- * time budgets — three seconds a move at the top — so a full 7x6 self-play game would take a
+ * time budgets - three seconds a move at the top - so a full 7x6 self-play game would take a
  * minute of wall clock on its own. The mechanisms being tested are geometry-independent, so the
  * small board tests exactly the same code far faster; {@link SmallBoardOracleTest} is where the
  * search is actually proved correct.

@@ -1,13 +1,17 @@
-# Media guide + in-game QA — Villager Connect Four 0.1.0
+# Media guide + in-game QA - Villager Connect Four 0.1.0
 
-> ## Status: not yet QA'd in game
+> ## Status: partially QA'd, all media captured (2026-07-26)
 >
-> The mod builds clean (88 tests, 11 classes) and the dev client boots with it loaded, the
-> config written and read back. **Nothing below has been played through yet.** Every VERIFY
-> item is outstanding, and no screenshot or clip has been captured.
+> Every CAPTURE is done - seven screenshots in `screenshots\` and a 40s trailer in
+> `trailer\`. The VERIFY items in 2A-2G and the resign/Esc-close paths passed; see the
+> gate section of `UPLOAD_CHECKLIST.md` for exactly which ones were run.
+>
+> **Still outstanding:** the sound cues, the draw (2H), the solved-game hint (2I), the
+> abandon paths in section 3, the config paths in section 4, the difficulty ladder in
+> section 5, and the cross-mod check in section 6.
 
 Every scene has a **VERIFY** part (QA) and a **CAPTURE** part (marketing). Play through in
-order — if a VERIFY item fails, stop, fix, rebuild, and restart the session. **Nothing gets
+order - if a VERIFY item fails, stop, fix, rebuild, and restart the session. **Nothing gets
 uploaded until every VERIFY passes.**
 
 ---
@@ -17,7 +21,7 @@ uploaded until every VERIFY passes.**
 Carried over from the Checkers session, where each of these cost real time to work out.
 
 1. **Launch:** `.\gradlew.bat runClient` from the project root.
-2. **World:** Creative with cheats. **26.2 renamed the game rules** — the old camelCase names
+2. **World:** Creative with cheats. **26.2 renamed the game rules** - the old camelCase names
    are rejected outright:
 
    | 26.2 | pre-26.2 |
@@ -27,7 +31,7 @@ Carried over from the Checkers session, where each of these cost real time to wo
    | `/gamerule send_command_feedback false` | `sendCommandFeedback` |
 
    Type `/gamerule ` and read the suggestion list if one is rejected. Set
-   `send_command_feedback false` before any capture — it stops command output sitting in the
+   `send_command_feedback false` before any capture - it stops command output sitting in the
    chat overlay for ~10s between shots. Then `/time set noon`.
 3. **Villagers:** summon one per level.
    ```
@@ -39,13 +43,13 @@ Carried over from the Checkers session, where each of these cost real time to wo
 4. **Video settings:** maximized window (client area **1920×1009**), **GUI scale 4**,
    particles minimal, F3 hidden. Screenshots: **F2** → `run\screenshots\`.
    ⚠ Set the scale **in game** (Options → Video Settings → GUI Scale), not by editing
-   `options.txt` — Minecraft rewrites that file on exit and resets it to `guiScale:0`.
+   `options.txt` - Minecraft rewrites that file on exit and resets it to `guiScale:0`.
 5. **Empty your hand** (`/clear`). In creative a left-click breaks a block and a right-click
    places one; with a block in hand a mis-aimed click quietly redecorates the village.
 6. **Kill the tutorial toasts.** A fresh profile shows "Move with W, A, S and D" and then
    "Look around" in the top-right corner, and they sit there through every screenshot. Trigger
    and let them expire before shooting.
-7. **Confirm the config before capturing.** `first-player=villager` and `board-size=7x6` — the
+7. **Confirm the config before capturing.** `first-player=villager` and `board-size=7x6` - the
    defaults, but the Checkers session was nearly ruined by capturing under a config that had
    been left on a non-default value from earlier testing. Check the log line
    (`board 7x6, villager moves first`), not the file.
@@ -54,20 +58,20 @@ Carried over from the Checkers session, where each of these cost real time to wo
 
 ## 2. Scenes
 
-### 2A. The button — ① `01-connect-four-button.png`
+### 2A. The button - ① `01-connect-four-button.png`
 
 **VERIFY**
 - The trade screen shows a **Connect Four** button to the right of the panel.
 - The label is **not truncated** at GUI scales 1, 2, 3 and 4. This is the specific failure
-  Villager Checkers shipped with ("Play Checker") — the fix is carried over, but "Connect
+  Villager Checkers shipped with ("Play Checker") - the fix is carried over, but "Connect
   Four" is a wide label and this is the scene that proves it.
 - Clicking closes the trade screen and opens the board.
 
-**CAPTURE** — trade screen with the button, villager visible, clean backdrop.
+**CAPTURE** - trade screen with the button, villager visible, clean backdrop.
 
-### 2B. The villager opens — ② `02-villager-drops-first.png`
+### 2B. The villager opens - ② `02-villager-drops-first.png`
 
-**VERIFY** — *the single most important check in this document.*
+**VERIFY** - *the single most important check in this document.*
 - The board opens and the villager **has already dropped, or is visibly thinking**, without
   the player touching anything.
 - The status line reads "*name* is thinking…" and the villager panel shows the animated dots.
@@ -77,9 +81,9 @@ Carried over from the Checkers session, where each of these cost real time to wo
 This is the one place the mod departs from both sibling mods, and the one thing most likely
 to be silently wrong.
 
-**CAPTURE** — the board just after the villager's opening drop.
+**CAPTURE** - the board just after the villager's opening drop.
 
-### 2C. Ghost disc — ③ `03-ghost-disc.png`
+### 2C. Ghost disc - ③ `03-ghost-disc.png`
 
 **VERIFY**
 - Moving the cursor across the board moves a translucent disc along the headroom row.
@@ -87,9 +91,9 @@ to be silently wrong.
 - The ghost is the **player's** colour, and does not appear when it is not their turn.
 - Hovering a **full** column shows no ghost.
 
-**CAPTURE** — cursor over a middle column, ghost hanging above it.
+**CAPTURE** - cursor over a middle column, ghost hanging above it.
 
-### 2D. A disc falling — ④ `04-disc-falling.png`
+### 2D. A disc falling - ④ `04-disc-falling.png`
 
 **VERIFY**
 - The disc accelerates rather than sliding at constant speed, and squashes very slightly on
@@ -98,17 +102,17 @@ to be silently wrong.
 - Clicking during a fall is never swallowed and never desyncs the board.
 - `WOOD_PLACE` plays on each drop.
 
-**CAPTURE** — mid-fall. Needs a burst; F2 while the disc is in the air.
+**CAPTURE** - mid-fall. Needs a burst; F2 while the disc is in the air.
 
-### 2E. A double threat — ⑤ `05-double-threat.png`
+### 2E. A double threat - ⑤ `05-double-threat.png`
 
 **VERIFY**
 - Set up two open threats against a **Novice** and confirm it fails to block either.
 - Against a **Journeyman**, confirm it blocks and does not play into the cell below a threat.
 
-**CAPTURE** — the board one move before the win, both threats visible.
+**CAPTURE** - the board one move before the win, both threats visible.
 
-### 2F. The winning four — ⑥ `06-winning-four.png`
+### 2F. The winning four - ⑥ `06-winning-four.png`
 
 **VERIFY**
 - The four winning discs are **outlined**, every other disc **dims**.
@@ -117,7 +121,7 @@ to be silently wrong.
 - The villager plays `VILLAGER_NO` when it loses, `VILLAGER_CELEBRATE` when it wins,
   `VILLAGER_YES` on a draw.
 
-**CAPTURE** — the win banner with the outlined four behind it.
+**CAPTURE** - the win banner with the outlined four behind it.
 
 ### 2G. Full column refusal
 

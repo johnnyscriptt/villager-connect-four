@@ -40,7 +40,7 @@ public final class ConnectFourSessionManager {
 	private static final double ABANDON_DISTANCE_SQ = 16 * 16;
 	private static final int VALIDATE_EVERY_TICKS = 20;
 	private static final int MIN_THINK_MS = 300, EXTRA_THINK_MS = 1200;
-	/** No move to animate — the game ended without one being played. */
+	/** No move to animate - the game ended without one being played. */
 	private static final int NO_COLUMN = -1;
 
 	private final Map<UUID, ConnectFourSession> byPlayer = new HashMap<>();
@@ -50,7 +50,7 @@ public final class ConnectFourSessionManager {
 
 	/**
 	 * One table for every game on the server. A proven score is a fact about a position, not
-	 * about the villager who worked it out, so sharing is correct — and it is what lets a Master
+	 * about the villager who worked it out, so sharing is correct - and it is what lets a Master
 	 * arrive at exact play part-way through a game instead of starting cold on every move.
 	 *
 	 * <p>Safe only because {@link #executor()} is single-threaded. If that ever gains a second
@@ -90,7 +90,7 @@ public final class ConnectFourSessionManager {
 
 		// The one real departure from the Checkers sibling: there the player always moves first,
 		// so opening the board is the whole of starting a game. Here the villager usually has
-		// the first drop, and it has to be set going now — nothing else will ask for it.
+		// the first drop, and it has to be set going now - nothing else will ask for it.
 		if (!session.isPlayersTurn()) scheduleAiMove(session);
 
 		VillagerConnectFour.LOGGER.debug("connect four game {} started: {} vs villager level {}",

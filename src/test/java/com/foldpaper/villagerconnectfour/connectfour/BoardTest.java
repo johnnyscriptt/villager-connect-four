@@ -126,7 +126,7 @@ class BoardTest {
 		}
 	}
 
-	/** A position written out cell by cell — an encoding independent of the bitboards. */
+	/** A position written out cell by cell - an encoding independent of the bitboards. */
 	private static String grid(Board board) {
 		StringBuilder out = new StringBuilder();
 		for (int col = 0; col < board.geometry().width(); col++) {

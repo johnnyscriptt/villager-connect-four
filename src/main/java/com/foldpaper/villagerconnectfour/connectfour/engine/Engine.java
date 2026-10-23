@@ -20,7 +20,7 @@ import java.util.function.BooleanSupplier;
  * <p>Note what that distance is measured from. Engines normally count plies from the root of the
  * search, which makes a mate score meaningless outside the search that produced it and is the
  * classic reason mate scores have to be adjusted on their way in and out of a transposition
- * table. Here the distance is counted in <b>discs on the board</b> instead — an absolute measure,
+ * table. Here the distance is counted in <b>discs on the board</b> instead - an absolute measure,
  * because every move adds exactly one disc and none is ever removed. A position therefore always
  * scores the same number whatever search reaches it and from wherever, so entries stay valid
  * across moves and across whole games, and the table can be shared without any adjustment at all.
@@ -97,7 +97,7 @@ public final class Engine {
 	}
 
 	/**
-	 * True once the best move is a forced win, or the best of them is still a forced loss —
+	 * True once the best move is a forced win, or the best of them is still a forced loss -
 	 * either way more depth cannot change the choice. Ordinary evaluations never come close to
 	 * this magnitude, and a mate is at most {@code size} plies away, so the margin is generous.
 	 */
@@ -207,7 +207,7 @@ public final class Engine {
 		private int negamax(int depth, int alpha, int beta) {
 			if (outOfTime()) return 0;
 
-			// How far along the game is, counted absolutely rather than from the search root —
+			// How far along the game is, counted absolutely rather than from the search root -
 			// see the class javadoc. This is what makes a stored score portable.
 			int discs = board.moves();
 

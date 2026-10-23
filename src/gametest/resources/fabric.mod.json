@@ -1,0 +1,15 @@
+{
+	"schemaVersion": 1,
+	"id": "villagerconnectfour-gametest",
+	"version": "1.0.0",
+	"name": "Villager Connect Four in-game test",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-client-gametest": [
+			"com.foldpaper.villagerconnectfour.gametest.PlayMoveGameTest"
+		]
+	},
+	"depends": {
+		"villagerconnectfour": "*"
+	}
+}

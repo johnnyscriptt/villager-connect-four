@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * One running game between a player and a villager. All state is server-side.
  *
- * <p>Colour tracks move order rather than who is holding the mouse — yellow always drops first —
+ * <p>Colour tracks move order rather than who is holding the mouse - yellow always drops first -
  * so which colour the player has depends on the {@code first-player} setting, and both sides
  * record it once here rather than working it out again at every call site.
  */
@@ -26,7 +26,7 @@ final class ConnectFourSession {
 	/** Cancels an in-flight engine search when the session dies. */
 	final AtomicBoolean stop = new AtomicBoolean();
 
-	/** {@link Board#YELLOW} or {@link Board#RED} — whichever the player was dealt. */
+	/** {@link Board#YELLOW} or {@link Board#RED} - whichever the player was dealt. */
 	final int playerColour;
 
 	/** Moves applied so far; used to reject stale engine results. */

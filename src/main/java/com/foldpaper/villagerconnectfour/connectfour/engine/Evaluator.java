@@ -7,13 +7,13 @@ import com.foldpaper.villagerconnectfour.connectfour.Geometry;
  * Static evaluation, scored from {@link Board#YELLOW}'s point of view and negated for red by the
  * caller. Weights live in one block so the whole personality is tunable in one place.
  *
- * <h2>Parity — the mechanism that makes an Expert</h2>
+ * <h2>Parity - the mechanism that makes an Expert</h2>
  *
  * <p>This is the one genuinely Connect-Four-specific idea in the engine, and it is what
  * separates rung 4 from rung 3.
  *
  * <p>Every column holds an even number of cells, and the board holds an even number in total. In
- * a pure filling race — both sides simply dropping discs with nothing else going on — yellow
+ * a pure filling race - both sides simply dropping discs with nothing else going on - yellow
  * takes the 1st, 3rd and 5th cell of a column and red takes the 2nd, 4th and 6th. Counting rows
  * from zero at the bottom, that means the cells at rows 0, 2 and 4 fall to <b>yellow</b>, the
  * side that moved first, and rows 1, 3 and 5 fall to <b>red</b>.
@@ -23,7 +23,7 @@ import com.foldpaper.villagerconnectfour.connectfour.Geometry;
  * fill it, or will fill it themselves. The same threat on row 2 is close to winning, because
  * yellow can wait and red eventually has to hand it over.
  *
- * <p>An engine that counts threats without weighing their parity — the Journeyman — builds the
+ * <p>An engine that counts threats without weighing their parity - the Journeyman - builds the
  * wrong ones and hands its opponent the right ones. That is a completely different mistake from
  * simply not searching deep enough, which is exactly what the ladder is supposed to be made of.
  *
@@ -34,7 +34,7 @@ import com.foldpaper.villagerconnectfour.connectfour.Geometry;
 final class Evaluator {
 	/** A threat whose row falls to its owner in the filling race. */
 	private static final int THREAT_RIGHT_PARITY = 40;
-	/** A threat whose row falls to the opponent — real, but they decide when it is reached. */
+	/** A threat whose row falls to the opponent - real, but they decide when it is reached. */
 	private static final int THREAT_WRONG_PARITY = 4;
 	/** Threat weight when the profile does not understand parity at all. */
 	private static final int THREAT_FLAT = 18;

@@ -16,5 +16,5 @@
 	"villagerconnectfour.banner.loss": "You lose!",
 	"villagerconnectfour.banner.draw": "Draw",
 	"villagerconnectfour.banner.close_hint": "Click anywhere to close",
-	"villagerconnectfour.banner.solved_hint": "Connect Four is solved — whoever drops first wins. Try first-player=player."
+	"villagerconnectfour.banner.solved_hint": "Connect Four is solved - whoever drops first wins. Try first-player=player."
 }

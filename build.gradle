@@ -26,6 +26,19 @@ loom {
 	}
 }
 
+// In-game test (src/gametest): right-clicks a villager, presses the play button and makes a
+// move with real mouse input. Run with: gradlew runClientGameTest
+// The gametest source set is not part of the shipped jar.
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "villagerconnectfour-gametest"
+		enableGameTests = false
+		enableClientGameTests = true
+		eula = true
+	}
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"

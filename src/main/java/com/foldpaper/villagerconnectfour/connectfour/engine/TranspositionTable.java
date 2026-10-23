@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 /**
  * A fixed-size table of positions the search has already scored, so a position reached by two
- * different move orders is only worked out once. Connect Four transposes heavily — the same
- * discs arrived at in a different sequence is the normal case, not the exception — so this is
+ * different move orders is only worked out once. Connect Four transposes heavily - the same
+ * discs arrived at in a different sequence is the normal case, not the exception - so this is
  * worth much more here than the equivalent would be in the Checkers sibling.
  *
  * <p>Open addressing with a single probe and always-replace: a collision overwrites rather than
@@ -29,7 +29,7 @@ public final class TranspositionTable {
 
 	/**
 	 * Marks a slot as never written. A real key is two bitboards added together and so is never
-	 * negative — and the empty board's key is 0, which would otherwise be indistinguishable from
+	 * negative - and the empty board's key is 0, which would otherwise be indistinguishable from
 	 * a freshly allocated slot.
 	 */
 	private static final long UNUSED = -1L;
@@ -81,7 +81,7 @@ public final class TranspositionTable {
 
 	/**
 	 * Spreads the key before masking. Board keys are two bitboards added together, so their low
-	 * bits are far from uniform — indexing on them raw would pile most positions into a fraction
+	 * bits are far from uniform - indexing on them raw would pile most positions into a fraction
 	 * of the table.
 	 */
 	private int index(long key) {

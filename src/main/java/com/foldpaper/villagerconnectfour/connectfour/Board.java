@@ -3,14 +3,14 @@ package com.foldpaper.villagerconnectfour.connectfour;
 import java.util.Arrays;
 
 /**
- * A Connect Four position with play/unplay. Pure Java — no Minecraft imports.
+ * A Connect Four position with play/unplay. Pure Java - no Minecraft imports.
  *
  * <p>The board is two bitboards over a {@link Geometry}, which owns the layout and the bit
  * tricks. {@link #position} always holds the discs of the side <em>to move</em> rather than a
  * fixed colour, which is why {@link #play} begins by xor-ing it with the mask: the discs that
  * were mine become theirs the moment the turn changes hands.
  *
- * <p>Colour tracks move order and nothing else — {@link #YELLOW} always drops first,
+ * <p>Colour tracks move order and nothing else - {@link #YELLOW} always drops first,
  * {@link #RED} always second. Which of them the human plays is a session setting decided well
  * above this class. Tying colour to move order rather than to a player keeps the parity
  * argument in {@code Evaluator} resting on a fixed invariant instead of a runtime flag.
@@ -59,7 +59,7 @@ public final class Board {
 
 	// ---------------------------------------------------------------- queries
 
-	/** {@link #YELLOW} or {@link #RED} — whose turn it is. */
+	/** {@link #YELLOW} or {@link #RED} - whose turn it is. */
 	public int sideToMove() {
 		return (moves & 1) == 0 ? YELLOW : RED;
 	}
@@ -76,7 +76,7 @@ public final class Board {
 
 	/**
 	 * True if {@code col} exists and has room. Deliberately says nothing about whether the game
-	 * is over — it is asked once per column on every node of the search, so it stays a couple of
+	 * is over - it is asked once per column on every node of the search, so it stays a couple of
 	 * instructions. {@link #legalMoves} is the one that knows about winning.
 	 */
 	public boolean canPlay(int col) {
@@ -173,7 +173,7 @@ public final class Board {
 	}
 
 	/**
-	 * A value identifying this position uniquely — the transposition table key. Adding the two
+	 * A value identifying this position uniquely - the transposition table key. Adding the two
 	 * bitboards works because {@code mask} marks every occupied cell and {@code position} marks
 	 * the subset belonging to one side, so the sum encodes both without collision.
 	 */
@@ -215,7 +215,7 @@ public final class Board {
 	/**
 	 * Playable cells that do not lose on the spot: they answer the opponent's immediate threat
 	 * and do not hand them a win in the cell directly above. Returns 0 when the opponent has two
-	 * separate immediate threats, because only one of them can be blocked — the position is
+	 * separate immediate threats, because only one of them can be blocked - the position is
 	 * already lost, and saying so is what lets the search stop early.
 	 */
 	public long nonLosingMoves() {

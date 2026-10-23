@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Properties the solver must satisfy against itself. These catch the class of bug that the
- * brute-force oracle in {@link SmallBoardOracleTest} is too slow to reach — above all a broken
+ * brute-force oracle in {@link SmallBoardOracleTest} is too slow to reach - above all a broken
  * transposition key, which produces scores that are wrong only sometimes and only on positions
  * that happen to collide.
  */

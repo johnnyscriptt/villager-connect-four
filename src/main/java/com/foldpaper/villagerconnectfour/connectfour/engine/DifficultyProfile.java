@@ -5,7 +5,7 @@ package com.foldpaper.villagerconnectfour.connectfour.engine;
  *
  * <p>Connect Four is strongly solved: on the standard 7x6 board the player who drops first wins
  * with perfect play, opening in the centre. The villager drops first by default, so the top of
- * this ladder is a genuine wall rather than merely a strong opponent — that is the point of it,
+ * this ladder is a genuine wall rather than merely a strong opponent - that is the point of it,
  * and the config's {@code first-player} key is the sanctioned way past it.
  *
  * <p>Where the Checkers sibling's ladder is built on a <em>capture horizon</em>, this one is
@@ -13,18 +13,18 @@ package com.foldpaper.villagerconnectfour.connectfour.engine;
  * line. Each rung switches on a different mechanism rather than just raising a number:
  *
  * <ol>
- *   <li><b>Novice</b> — no vision at all. Prefers the middle and otherwise drops at random. Will
+ *   <li><b>Novice</b> - no vision at all. Prefers the middle and otherwise drops at random. Will
  *       not take a win sitting under its nose, and will not block yours.</li>
- *   <li><b>Apprentice</b> — one-ply tactics: takes a win if it has one, otherwise blocks yours.
+ *   <li><b>Apprentice</b> - one-ply tactics: takes a win if it has one, otherwise blocks yours.
  *       Blind to the fact that a block can be a gift, so it will fill the cell beneath your
  *       winning square and lift you onto it. Blind, too, to a double threat.</li>
- *   <li><b>Journeyman</b> — refuses to play any move that loses on the spot, and searches. Makes
+ *   <li><b>Journeyman</b> - refuses to play any move that loses on the spot, and searches. Makes
  *       and recognises double threats. Blind to parity: it builds threats on rows that will
  *       be filled by the wrong player anyway.</li>
- *   <li><b>Expert</b> — parity-aware evaluation. Understands that a threat is only worth
+ *   <li><b>Expert</b> - parity-aware evaluation. Understands that a threat is only worth
  *       something if the race to fill the column reaches it on the right turn, so it steers
  *       toward its own parity and refuses to hand you yours. Still estimates past its horizon.</li>
- *   <li><b>Master</b> — solves. Searches to a terminal score with a transposition table that
+ *   <li><b>Master</b> - solves. Searches to a terminal score with a transposition table that
  *       survives between moves, so its knowledge compounds over a game.</li>
  * </ol>
  *

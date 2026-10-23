@@ -9,7 +9,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 /**
  * Authoritative board state after any drop or game end. {@code lastColumn} is the column just
  * played so the client can animate the disc falling into it, and is -1 when there is no move to
- * show — a game abandoned or resigned rather than played.
+ * show - a game abandoned or resigned rather than played.
  */
 public record ConnectFourStateS2C(int gameId, String moves, int lastColumn, int outcomeId,
 		boolean playerToMove) implements CustomPacketPayload {

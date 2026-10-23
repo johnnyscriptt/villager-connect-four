@@ -56,7 +56,7 @@ public final class ClientConnectFourGame {
 
 	/**
 	 * Applies authoritative state. Returns the column of a move the client had not already seen,
-	 * so the screen can animate it, or -1 when there is nothing new to show — which is the normal
+	 * so the screen can animate it, or -1 when there is nothing new to show - which is the normal
 	 * case for the player's own move, already applied optimistically.
 	 */
 	public int applyServerState(ConnectFourStateS2C payload) {
